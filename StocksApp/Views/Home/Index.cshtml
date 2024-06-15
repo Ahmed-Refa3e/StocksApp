@@ -1,0 +1,30 @@
+﻿@model Stock
+
+@{
+    ViewBag.Title = "Stock Information";
+}
+
+<h2>Stock Information</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Symbol</th>
+            <th>Current Price</th>
+            <th>Highest Price</th>
+            <th>Lowest Price</th>
+            <th>Open Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+            <td>@Model.Symbol</td>
+            <td>@Model.CurrentPrice</td>
+            <td>@Model.HighestPrice</td>
+            <td>@Model.LowestPrice</td>
+            <td>@Model.OpenPrice</td>
+            </tr>
+        
+    </tbody>
+</table>
