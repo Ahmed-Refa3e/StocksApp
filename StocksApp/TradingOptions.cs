@@ -4,6 +4,6 @@
     {
         public string? Apple { get; set; }
 
-        public string? apple { get; set; }
+        public string? Microsoft { get; set; }
     }
 }

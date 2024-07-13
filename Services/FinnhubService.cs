@@ -1,5 +1,8 @@
 ﻿using serviceContracts;
 using System.Text.Json;
+using Microsoft.Extensions.Configuration;
+
+
 namespace finhubservice
 {
     public class Finhubservice : IFinnhubService
