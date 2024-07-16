@@ -1,4 +1,4 @@
-using finhubservice;
+using Services;
 using StocksApp;
 
 var builder = WebApplication.CreateBuilder(args);

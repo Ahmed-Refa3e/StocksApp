@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\serviceContracts\serviceContracts.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>

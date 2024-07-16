@@ -1,21 +1,14 @@
-﻿using finhubservice;
+﻿using Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using StocksApp.Models;
 
 namespace StocksApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(Finhubservice finhubservice, IOptions<TradingOptions> tradingOptions) : Controller
     {
-        private readonly Finhubservice _finhubservice;
-        private readonly IOptions<TradingOptions> _tradingOptions;
-
-
-        public HomeController(Finhubservice finhubservice, IOptions<TradingOptions> tradingOptions)
-        {
-            _finhubservice = finhubservice;
-            _tradingOptions = tradingOptions;
-        }
+        private readonly Finhubservice _finhubservice = finhubservice;
+        private readonly IOptions<TradingOptions> _tradingOptions = tradingOptions;
 
         [Route("/")]
         public async Task<IActionResult> Index()
