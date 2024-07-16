@@ -1,14 +1,15 @@
+using ServiceContracts;
 using Services;
 using StocksApp;
 
 var builder = WebApplication.CreateBuilder(args);
-//services
+
+//Services
 builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient();
-builder.Services.AddScoped<Finhubservice>();
 builder.Services.Configure<TradingOptions>(builder.Configuration.GetSection("TradingOptions"));
-
-
+builder.Services.AddSingleton<IStocksService, StocksService>();
+builder.Services.AddSingleton<IFinnhubService, FinnhubService>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

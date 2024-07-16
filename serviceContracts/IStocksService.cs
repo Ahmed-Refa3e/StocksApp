@@ -1,31 +1,37 @@
 ﻿using serviceContracts.DTO;
 
-namespace serviceContracts
+namespace ServiceContracts
 {
+    /// <summary>
+    /// Represents Stocks service that includes operations like buy order, sell order
+    /// </summary>
     public interface IStocksService
     {
         /// <summary>
-        /// Inserts a new buy order into the database table called 'BuyOrders
+        /// Creates a buy order
         /// </summary>
-        /// <param name="buyOrderRequest"></param>
-        /// <returns></returns>
-        Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest);
-        /// <summary>
-        /// Inserts a new sell order into the database table called 'SellOrders'.
-        /// </summary>
-        /// <param name="sellOrderRequest"></param>
-        /// <returns></returns>
+        /// <param name="buyOrderRequest">Buy order object</param>
+        BuyOrderResponse CreateBuyOrder(BuyOrderRequest? buyOrderRequest);
 
-        Task<SellOrderResponse> CreateSellOrder(SellOrderRequest? sellOrderRequest);
+
         /// <summary>
-        /// Returns the existing list of buy orders retrieved from database table called 'BuyOrders'
+        /// Creates a buy order
         /// </summary>
-        /// <returns></returns>
-        Task<List<BuyOrderResponse>> GetBuyOrders();
+        /// <param name="sellOrderRequest">Sell order object</param>
+        SellOrderResponse CreateSellOrder(SellOrderRequest? sellOrderRequest);
+
+
         /// <summary>
-        /// Returns the existing list of sell orders retrieved from database table called 'SellOrders'.
+        /// Returns all existing buy orders
         /// </summary>
-        /// <returns></returns>
-        Task<List<SellOrderResponse>> GetSellOrders();
+        /// <returns>Returns a list of objects of BuyOrder type</returns>
+        List<BuyOrderResponse> GetBuyOrders();
+
+
+        /// <summary>
+        /// Returns all existing sell orders
+        /// </summary>
+        /// <returns>Returns a list of objects of SellOrder type</returns>
+        List<SellOrderResponse> GetSellOrders();
     }
 }

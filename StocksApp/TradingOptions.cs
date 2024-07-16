@@ -2,8 +2,6 @@
 {
     public class TradingOptions
     {
-        public string? Apple { get; set; }
-
-        public string? Microsoft { get; set; }
+        public string? DefaultStockSymbol { get; set; }
     }
 }
